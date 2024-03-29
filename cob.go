@@ -9,7 +9,7 @@ import (
 )
 
 func (bb *BB) CriarCob(pix Pix) (string, error) {
-	token, err := bb.GetAccessToken()
+	token, err := bb.GetAccessToken(ScopeCobWrite)
 	if err != nil {
 		return "", err
 	}

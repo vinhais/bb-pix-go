@@ -8,6 +8,17 @@ import (
 	"net/url"
 )
 
+type AuthScope string
+
+const (
+	ScopePixWrite  AuthScope = "pix.write"
+	ScopePixRead   AuthScope = "pix.read"
+	ScopeCobWrite  AuthScope = "cob.write"
+	ScopeCobRead   AuthScope = "cob.read"
+	ScopeCobvWrite AuthScope = "cobv.write"
+	ScopeCobvRead  AuthScope = "cobv.read"
+)
+
 type AccessToken struct {
 	AccessToken string `json:"access_token"`
 	TokenType   string `json:"token_type"`
@@ -15,10 +26,10 @@ type AccessToken struct {
 	Scope       string `json:"scope"`
 }
 
-func (bb *BB) GetAccessToken() (*AccessToken, error) {
+func (bb *BB) GetAccessToken(scope AuthScope) (*AccessToken, error) {
 	data := url.Values{}
 	data.Set("grant_type", "client_credentials")
-	data.Add("scope", Scopes)
+	data.Add("scope", string(scope))
 
 	body := bytes.NewBufferString(data.Encode())
 

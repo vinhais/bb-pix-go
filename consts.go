@@ -25,7 +25,4 @@ const (
 
 	// PixChaveHomologacao é a chave Pix para homologação que o BB disponibiliza
 	PixChaveHomologacao = "hmtestes2@bb.com.br"
-
-	// Scopes é o escopo de permissão que o aplicativo deve ter para acessar a API Pix
-	Scopes = "pix.write pix.read cob.write cob.read cobv.write cobv.read"
 )
