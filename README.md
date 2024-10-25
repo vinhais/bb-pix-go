@@ -1,6 +1,7 @@
 # SDK Go API Pix v2 Banco do Brasil
 
 🚧 Atualmente o projeto está em desenvolvimento e não é recomendado para uso em produção.
+🚧 Ele precisa ser reescrito por completo, existem vários problemas de design na biblioteca e recursos incompletos.
 
 ## Instalação
 
